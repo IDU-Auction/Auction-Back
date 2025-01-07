@@ -22,7 +22,7 @@ class Text(models.Model):
         ('cookies', 'cookies'),
     )
 
-    text_type = models.CharField("Тип текста", max_length=255)
+    text_type = models.CharField("Тип текста", max_length=255, choices=text_types)
     text = models.TextField("Текст")
 
     class Meta:
