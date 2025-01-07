@@ -9,6 +9,7 @@ class Product(models.Model):
     initial_price = models.IntegerField("Цена", default=0)
     description = models.TextField("Описание", null=True)
     end_time = models.DateTimeField("Конец", null=True)
+    auction = models.BooleanField("Аукцион", default=False)
 
     class Meta:
         ordering = ['id']
