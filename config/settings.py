@@ -32,13 +32,16 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'daphne',
+    'channels',
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework', 'channels',
+    'rest_framework', 'rosetta',
+    'django_summernote'
 ]
 
 LOCAL_APPS = [
@@ -120,13 +123,29 @@ LOGIN_URL = 'login'
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = "ru"
+    
+gettext = lambda s: s
+LANGUAGES = (
+    ('ru', gettext('Russian')),
+    ('en', gettext('English')),
+)
+MODELTRANSLATION_LANGUAGES = ('ru', 'en')
 
-TIME_ZONE = 'Asia/Tashkent'
+MODELTRANSLATION_TRANSLATION_FILES = (
+    'apps.about.translation',
+    'apps.main.translation',
+)
+
+TIME_ZONE = "Asia/Tashkent"
 
 USE_I18N = True
 
-USE_TZ = True
+USE_TZ = False
+
+LOCALE_PATHS = [
+    BASE_DIR / "locale"
+]
 
 
 # Static files (CSS, JavaScript, Images)
@@ -134,11 +153,11 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATICFILES_DIRS = [
-    BASE_DIR / "static"
-]
+# STATICFILES_DIRS = [
+#     BASE_DIR / "static"
+# ]
 
-# STATIC_ROOT = BASE_DIR / "static"
+STATIC_ROOT = BASE_DIR / "static"
 
 MEDIA_URL = 'media/'
 
