@@ -8,7 +8,7 @@ def main(request):
         'products': Product.objects.all()
     }
 
-    return render(request, 'index.html', context=context)
+    return render(request, 'main/index.html', context=context)
 
 
 def product_detail(request, pk):
@@ -21,4 +21,4 @@ def product_detail(request, pk):
         'product': product
     }
 
-    return render(request, 'product-detail.html', context=context)
+    return render(request, 'main/product-detail.html', context=context)
