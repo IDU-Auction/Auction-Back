@@ -5,7 +5,7 @@ from .models import *
 
 
 @admin.register(About)
-class AboutAdmin(admin.ModelAdmin):
+class AboutAdmin(TranslationAdmin):
     list_display = ('name', 'address', 'phone_number', 'email')
 
 
