@@ -6,7 +6,7 @@ from .models import *
 
 @admin.register(About)
 class AboutAdmin(admin.ModelAdmin):
-    list_display = ('name',)
+    list_display = ('name', 'address', 'phone_number', 'email')
 
 
 @admin.register(Text)

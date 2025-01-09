@@ -4,6 +4,9 @@ from django.db import models
 class About(models.Model):
 
     name = models.CharField("Название", max_length=255)
+    address = models.CharField("Адрес", max_length=255, null=True, blank=True)
+    phone_number = models.CharField("Телефон", max_length=255, null=True, blank=True)
+    email = models.EmailField("Почта", max_length=255, null=True, blank=True)
 
     class Meta:
         ordering = ['id',]
