@@ -6,6 +6,11 @@ class Category(models.Model):
     name = models.CharField("Название", max_length=255)
     icon = models.ImageField("categories_image/", null=True)
 
+    class Meta:
+        ordering = ['id', ]
+        verbose_name = "Category"
+        verbose_name_plural = "Categories"
+
     def __str__(self) -> str:
         return self.name
 
