@@ -2,6 +2,14 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
+class Category(models.Model):
+    name = models.CharField("Название", max_length=255)
+    icon = models.ImageField("categories_image/", null=True)
+
+    def __str__(self) -> str:
+        return self.name
+
+
 class Product(models.Model):
 
     name = models.CharField("Название", max_length=255)
@@ -10,6 +18,7 @@ class Product(models.Model):
     description = models.TextField("Описание", null=True)
     end_time = models.DateTimeField("Конец", null=True)
     auction = models.BooleanField("Аукцион", default=False)
+    category = models.ForeignKey(Category, models.RESTRICT, null=True)
 
     class Meta:
         ordering = ['id']
