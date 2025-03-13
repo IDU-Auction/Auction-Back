@@ -13,56 +13,7 @@
 </head>
 <body>
     <!-- Header section -->
-        <header class="header">
-                <nav class="navigation-items">
-                    <div class="container">
-                        <div class="navigation-items-wrapper">
-                            <div class="left-nav__items">
-                                <div class="main-logo">
-                                    <a href="index.html">
-                                        <img src="./images/header-images/main-logo.png" alt="Main Logo">
-                                    </a>
-                                </div>
-                                <ul class="date-time">
-                                    <li class="date-time-item">
-                                        <i class="far fa-calendar-alt"></i>
-                                        <span id="date"></span> (GMT+5)
-                                    </li>
-                                    <li class="date-time-item">
-                                        <i class="far fa-clock"></i>
-                                        <span id="time"></span>
-                                    </li>
-                                    <li class="extra-tool">
-                                        <img src="images/header-images/eyeglass.svg" alt="eyeglasses">
-                                        Special Abilities
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="dropdown">
-                                <button class="dropbtn">
-                                    <img src="images/header-images/en.png" alt="English">
-                                    EN
-                                    <i class="fa-solid fa-caret-down"></i>
-                                </button>
-                                <div class="dropdown-content">
-                                <a href="#">
-                                    <img src="images/header-images/uz.png" alt="Uzbek">
-                                    Uzbek
-                                </a>
-                                <a href="#">
-                                    <img src="images/header-images/ru.png" alt="Russian">
-                                    Russian
-                                </a>
-                                <a href="#">
-                                    <img src="images/header-images/en.png" alt="English">
-                                    English
-                                </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </nav>
-        </header>
+        {% include 'auth_header.html' %}
     <!-- /Header section -->
     
     <!-- Authorization section -->
