@@ -1,0 +1,97 @@
+{% load static %}
+<header class="header">
+    <nav class="navigation-items">
+        <div class="container">
+            <div class="upper-navigation__items">
+                <div class="upper-left-navigation-items">
+                     <div class="main-logo">
+                         <a href="index.html">
+                             <img src="{% static 'images/header/main-logo.png' %}" alt="Main Logo">
+                         </a>
+                     </div>
+                     <div class="search-bar">
+                         <form action="#" method="GET">
+                             <input type="text" name="search" class="search-input" id="search" placeholder="Lot number or property name">
+                             <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+                         </form>
+                     </div>
+                 </div>
+                 <div class="upper-right-navigation-items">
+                     <a href="index.html"><img src="{% static 'images/header/ipo.png' %}" alt="IPO Partner image"></a>
+                     <a href="index.html"><img src="{% static 'images/header/e-auction-shop.png' %}" alt="E-Auction-Shop image"></a>
+                     <a href="index.html"><img src="{% static 'images/header/assistant.png' %}" alt="Assistant image"></a>
+                     <span class="demo-version">
+                         <i class="fa-solid fa-laptop"></i>
+                         Demo
+                     </span>
+                     <span class="eyeglasses-img">
+                         <img src="{% static 'images/header/eyeglass.svg' %}" alt="eyeglasses">
+                     </span>
+                     <div class="dropdown">
+                        <button class="dropbtn">
+                            <img src="{% static 'images/header/en.png' %}" alt="English">
+                            EN
+                            <i class="fa-solid fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                        <a href="#">
+                            <img src="{% static 'images/header/uz.png' %}" alt="Uzbek">
+                            Uzbek
+                        </a>
+                        <a href="#">
+                            <img src="{% static 'images/header/ru.png' %}" alt="Russian">
+                            Russian
+                        </a>
+                        <a href="#">
+                            <img src="{% static 'images/header/en.png' %}" alt="English">
+                            English
+                        </a>
+                        </div>
+                    </div>
+                    {% if user.is_authenticated %}
+                    <span class="reg-button"><a href="{% url 'register' %}">Log out</a></span>
+                    {% else %}
+                    <span class="reg-button"><a href="{% url 'register' %}">Register</a></span>
+                    <a href="{% url 'login' %}"><button type="button" class="sign-in-btn">Sign in</button></a>
+                    {% endif %}
+                 </div>
+             </div>
+        </div>
+    </nav>
+    <nav class="navigation-items">
+        <div class="container">
+            <ul class="lower-navigation__items">
+                <li class="lower-navigation__item">
+                    <a href="{% url 'lots' %}">Lots</a>
+                </li>
+                <li class="lower-navigation__item">
+                    <a href="#">Help</a>
+                </li>
+                <li class="lower-navigation__item">
+                    <a href="#">Aboute Trade</a>
+                </li>
+                <li class="lower-navigation__item">
+                    <a href="#">Preferences</a>
+                </li>
+                <li class="lower-navigation__item">
+                    <a href="#">Interactive services</a>
+                </li>
+                <li class="lower-navigation__item">
+                    <a href="#">Corporate governance</a>
+                </li>
+                <li class="lower-navigation__item">
+                    <a href="#">News</a>
+                </li>
+                <li class="lower-navigation__item">
+                    <a href="#">Contacts</a>
+                </li>
+                <div class="date">
+                    <p id="currentDateTime"></p>
+                </div>
+                <div class="lower-search-btn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </ul>
+        </div>
+    </nav>
+</header>

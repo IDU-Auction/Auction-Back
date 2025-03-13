@@ -21,3 +21,8 @@ class PriceAdmin(admin.ModelAdmin):
     list_display = ('product', 'user', 'price')
     autocomplete_fields = ('product', 'user')
     date_hierarchy = "date"
+
+
+@admin.register(SoldProduct)
+class SoldProductAdmin(admin.ModelAdmin):
+    list_display = ('by', 'product')

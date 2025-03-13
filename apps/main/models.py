@@ -1,10 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+from apps.authentication.models import CustomUser
+
 
 class Category(models.Model):
     name = models.CharField("Название", max_length=255)
     icon = models.ImageField("categories_image/", null=True)
+    is_active = models.BooleanField(default=True)
 
     class Meta:
         ordering = ['id', ]
@@ -41,7 +44,7 @@ class Product(models.Model):
 class Price(models.Model):
 
     product = models.ForeignKey(Product, on_delete=models.RESTRICT, verbose_name="Продукт")
-    user = models.ForeignKey(User, on_delete=models.RESTRICT, verbose_name="Пользователь")
+    user = models.ForeignKey(CustomUser, on_delete=models.RESTRICT, verbose_name="Пользователь")
     price = models.IntegerField("Цена", default=0)
     date = models.DateTimeField("Дата", auto_now_add=True)
 
@@ -52,3 +55,13 @@ class Price(models.Model):
     
     def __str__(self):
         return f"{self.price} from {self.user} for {self.product}"
+
+
+class SoldProduct(models.Model):
+    by = models.ForeignKey(CustomUser, models.RESTRICT)
+    product = models.ForeignKey(Product, models.RESTRICT)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Sold Product"
+        verbose_name_plural = "Sold Product"

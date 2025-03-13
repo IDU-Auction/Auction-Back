@@ -1,0 +1,449 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <title>E-Auction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/shared.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head> 
+<body>
+    <!-- Header section -->
+    {% include 'header.html' %}
+    <!-- /Header section -->
+
+    <!-- Categories section -->
+        <div class="container">
+            <section class="categories">
+                {% for category  in categories %}
+                    <div class="category-item">
+                        <div class="category-title">{{ category.name }}</div>
+                        <div class="category-icon">
+                            <img src="{{ category.icon.url }}" alt="{{ category.name }}">
+                        </div>
+                    </div>
+                {% endfor %}
+
+                {% for oh in other %}
+                    <div class="category-item hide-category">
+                        <div class="category-title">{{ oh.name }}</div>
+                        <div class="category-icon">
+                            <img src="{{ oh.icon.url }}" alt="{{ oh.name }}">
+                        </div>
+                    </div>
+                {% endfor %}
+            </section>
+        </div>
+        <div class="category-button">
+            <div class="category-toggle">
+                <span class="show-more">
+                    Show more
+                    <i class="fa-solid fa-angle-down"></i>
+                </span>
+                <span class="show-less">
+                    Show less
+                    <i class="fa-solid fa-angle-up"></i>
+                </span>
+            </div>
+        </div>
+    <!-- /Categories section -->
+
+    <!-- Advertising section -->
+        <div class="container">
+        <section class="advertising">
+            <div class="swiper mySwiper left-advertising-banner">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide advertising-banner__image"><img src="images/advertising-images/reklama-banner1.jpeg" alt="Advertising banner 1"></div>
+                    <div class="swiper-slide advertising-banner__image"><img src="images/advertising-images/reklama-banner2.jpeg" alt="Advertising banner 2"></div>
+                    <div class="swiper-slide advertising-banner__image"><img src="images/advertising-images/reklama-banner3.jpeg" alt="Advertising banner 3"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+    
+            <div class="right-advertising-banner">
+                    <div class="swiper mySwiper upper-advertising-banner">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide advertising-banner__image"><img src="images/advertising-images/reklama-banner4.jpeg" alt="Advertising banner 4"></div>
+                            <div class="swiper-slide advertising-banner__image"><img src="images/advertising-images/reklama-banner5.jpeg" alt="Advertising banner 5"></div>
+                            <div class="swiper-slide advertising-banner__image"><img src="images/advertising-images/reklama-banner6.jpeg" alt="Advertising banner 6"></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <div class="swiper mySwiper lower-advertising-banner">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide advertising-banner__image"><img src="images/advertising-images/reklama-banner7.jpeg" alt="Advertising banner 7"></div>
+                            <div class="swiper-slide advertising-banner__image"><img src="images/advertising-images/reklama-banner8.jpeg" alt="Advertising banner 8"></div>
+                            <div class="swiper-slide advertising-banner__image"><img src="images/advertising-images/reklama-banner9.jpeg" alt="Advertising banner 9"></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+            </div>
+        </section>
+        </div>
+    <!-- /Advertising section -->
+
+    <!-- Land section -->
+        <section class="land">
+            <div class="container">
+                <div class="upper-land__area">
+                    <div class="land-title">Voting to put the plot of land up for trade based on the master plan</div>
+                    <div class="land-button">
+                        <button type="button">
+                            <a href="#">Show all
+                                <i class="fa-solid fa-angles-right"></i>
+                            </a>
+                        </button>
+                    </div>
+                </div>
+                <div class="lower-land__area">
+                    <p>Land plots are not available</p>
+                </div>
+            </div>
+        </section>
+    <!-- /Land section -->
+
+    <!-- Help section -->
+        <section class="help">
+            <div class="container">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide help-tips">
+                                <div class="help-tip__image">
+                                    <img src="images/help-image/home-help1.png" alt="Image1">
+                                </div>
+                                <div class="help-tip__text">
+                                    <div class="help-tip__title">How to participate in the auction?</div>
+                                    <div class="help-tip__description">To participate in the e-auction, you should create an account on the "E-Auction" platform and yop up your account.</div>
+                                </div>
+                                <button type="button" class="more-btn">More</button>
+                        </div>
+                        <div class="swiper-slide help-tips">
+                            <div class="help-tip__image">
+                                <img src="images/help-image/home-help2.png" alt="Image2">
+                            </div>
+                            <div class="help-tip__text">
+                                <div class="help-tip__title">How to create an account?</div>
+                                <div class="help-tip__description">“Go to the Home page and click on the “Register” button.</div>
+                            </div>
+                            <button type="button" class="more-btn">More</button>
+                        </div>
+                        <div class="swiper-slide help-tips">
+                            <div class="help-tip__image">
+                                <img src="images/help-image/home-help3.png" alt="Image3">
+                            </div>
+                            <div class="help-tip__text">
+                                <div class="help-tip__title">How to top up my account?</div>
+                                <div class="help-tip__description">Log in to your account and click the "Top-up Account" button. More information can be found on the "Help" page.</div>
+                            </div>
+                            <button type="button" class="more-btn">More</button>
+                        </div>
+                        <div class="swiper-slide help-tips">
+                            <div class="help-tip__image">
+                                <img src="images/help-image/home-help4.png" alt="Image4">
+                            </div>
+                            <div class="help-tip__text">
+                                <div class="help-tip__title">How to withdraw money from my account?</div>
+                                <div class="help-tip__description">Log in to your account and click the “Withdraw funds” button. More information can be found on the “Help” page</div>
+                            </div>
+                            <button type="button" class="more-btn">More</button>
+                        </div>
+                        <div class="swiper-slide help-tips">
+                            <div class="help-tip__image">
+                                <img src="images/help-image/home-help5.png" alt="Image5">
+                            </div>
+                            <div class="help-tip__text">
+                                <div class="help-tip__title">How to apply for participation in the auction?</div>
+                                <div class="help-tip__description">Information about participation in the auction can be found on the page "Help"</div>
+                            </div>
+                            <button type="button" class="more-btn">More</button>
+                        </div>
+                        <div class="swiper-slide help-tips">
+                            <div class="help-tip__image">
+                                <img src="images/help-image/home-help6.png" alt="Image6">
+                            </div>
+                            <div class="help-tip__text">
+                                <div class="help-tip__title">How to download the protocol of the auction results?</div>
+                                <div class="help-tip__description">Log in to your account and click the "Protocols" button</div>
+                            </div>
+                            <button type="button" class="more-btn">More</button>
+                        </div>
+                        <div class="swiper-slide help-tips">
+                            <div class="help-tip__image">
+                                <img src="images/help-image/home-help7.png" alt="Image7">
+                            </div>
+                            <div class="help-tip__text">
+                                <div class="help-tip__title">How to find out my username?</div>
+                                <div class="help-tip__description">If you forgot your username, go to the “Interactive Services” page and select “Username Identification”</div>
+                            </div>
+                            <button type="button" class="more-btn">More</button>
+                        </div>
+                        <div class="swiper-slide help-tips">
+                            <div class="help-tip__image">
+                                <img src="images/help-image/home-help8.png" alt="Image8">
+                            </div>
+                            <div class="help-tip__text">
+                                <div class="help-tip__title">How to change my username?</div>
+                                <div class="help-tip__description">If you wish to change your username, go to the “Interactive Services” page and select "Change username"</div>
+                            </div>
+                            <button type="button" class="more-btn">More</button>
+                        </div>
+                        <div class="swiper-slide help-tips">
+                            <div class="help-tip__image">
+                                <img src="images/help-image/home-help9.png" alt="Image9">
+                            </div>
+                            <div class="help-tip__text">
+                                <div class="help-tip__title">How to recover my password?</div>
+                                <div class="help-tip__description">If you forgot your password you can recover it on the Login page by clicking on "Forgot your password?"</div>
+                            </div>
+                            <button type="button" class="more-btn">More</button>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+        </section>
+    <!-- /Help section -->
+
+    <!-- Statistics section -->
+        <section class="statistics">
+        <div class="container">
+            <div class="statistics-items">
+                <div class="statistic-card">
+                    <h4 class="statistics-title">Ongoing auctions</h4>
+                    <div class="statistics-info">
+                        <img src="{% static 'images/statistics-images/statistics-auction.png' %}" alt="Auction icon">
+                        <p class="statistics-number">21</p>
+                    </div>
+                </div>
+                <div class="statistic-card">
+                    <h4 class="statistics-title">Current auctions</h4>
+                    <div class="statistics-info">
+                        <img src="{% static 'images/statistics-images/statistics-date.png' %}" alt="Auction icon">
+                        <p class="statistics-number">127 702</p>
+                    </div>
+                </div>
+                <div class="statistic-card">
+                    <h4 class="statistics-title">Completed auctions</h4>
+                    <div class="statistics-info">
+                        <img src="{% static 'images/statistics-images/statistics-time.png' %}" alt="Auction icon">
+                        <p class="statistics-number">13 315 755</p>
+                    </div>
+                </div>
+                <div class="statistic-card">
+                    <h4 class="statistics-title">All auctions</h4>
+                    <div class="statistics-info">
+                        <img src="{% static 'images/statistics-images/statistics-diagram.png' %}" alt="Auction icon">
+                        <p class="statistics-number">13 571 159</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+    <!-- /Statistics section -->
+
+    <!-- News section -->
+        <section class="news">
+            <div class="container">
+                <div class="news-title">
+                    <h4>Last news</h4>
+                    <div class="news-button">
+                        <button type="button">
+                            <a href="#">Show all
+                                <i class="fa-solid fa-angles-right"></i>
+                            </a>
+                        </button>
+                    </div>
+                </div>
+                <div class="news-items">
+                    <div class="news-item">
+                        <div class="news-img">
+                            <img src="images/news-images/news-logo.jpg" alt="News image">
+                        </div>
+                        <div class="news-description">
+                            <div class="news-text">
+                                The procedure for participating in auctions has been changed
+                            </div>
+                            <div class="news-date">
+                                <i class="fa-regular fa-clock"></i>
+                                30.01.2025
+                            </div>
+                            <div class="news-view">
+                                <i class="fa-regular fa-eye"></i>
+                                1961
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-img">
+                            <img src="images/news-images/news-logo.jpg" alt="News image">
+                        </div>
+                        <div class="news-description">
+                            <div class="news-text">
+                                Actively participate in the public discussion!
+                            </div>
+                            <div class="news-date">
+                                <i class="fa-regular fa-clock"></i>
+                                20.01.2025
+                            </div>
+                            <div class="news-view">
+                                <i class="fa-regular fa-eye"></i>
+                                456
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-img">
+                            <img src="images/news-images/news-logo.jpg" alt="News image">
+                        </div>
+                        <div class="news-description">
+                            <div class="news-text">
+                                (Expired) "Organization of electronic online auctions"
+                            </div>
+                            <div class="news-date">
+                                <i class="fa-regular fa-clock"></i>
+                                17.01.2025
+                            </div>
+                            <div class="news-view">
+                                <i class="fa-regular fa-eye"></i>
+                                599
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-items">
+                    <div class="news-item">
+                        <div class="news-img">
+                            <img src="images/news-images/news-logo.jpg" alt="News image">
+                        </div>
+                        <div class="news-description">
+                            <div class="news-text">
+                                (Expired) Advertisement for the recruitment of candidates for the post of Clearing Service Specialist
+                            </div>
+                            <div class="news-date">
+                                <i class="fa-regular fa-clock"></i>
+                                14.12.2024
+                            </div>
+                            <div class="news-view">
+                                <i class="fa-regular fa-eye"></i>
+                                703
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-img">
+                            <img src="images/news-images/news-logo.jpg" alt="News image">
+                        </div>
+                        <div class="news-description">
+                            <div class="news-text">
+                                (Expired) Competition for recruitment of candidates for the position of representative in Karakalpakstan
+                            </div>
+                            <div class="news-date">
+                                <i class="fa-regular fa-clock"></i>
+                                14.12.2024
+                            </div>
+                            <div class="news-view">
+                                <i class="fa-regular fa-eye"></i>
+                                712
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-img">
+                            <img src="images/news-images/news-logo.jpg" alt="News image">
+                        </div>
+                        <div class="news-description">
+                            <div class="news-text">
+                                (Expired) competition for recruiting candidates for the position of representative in Samarkand
+                            </div>
+                            <div class="news-date">
+                                <i class="fa-regular fa-clock"></i>
+                                13.12.2024
+                            </div>
+                            <div class="news-view">
+                                <i class="fa-regular fa-eye"></i>
+                                327
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- /News section  -->
+
+    <!-- Mobile section -->
+     <section class="mobile">
+        <div class="container">
+            <div class="mobile-details">
+                <div class="mobile-app__image">
+                    <img src="{% static 'images/mobile-app-images/mobile-iphone.png' %}" alt="Interface of mobile app">
+                </div>
+                <div class="mobile-app__download">
+                    <h1>e-auction.uz</h1>
+                    <p>Download now</p>
+                    <div class="app-download__link">
+                        <a href="https://play.google.com/store/apps/details?id=uz.auction.v2&hl=uz&gl=US&pli=1" target="_blank">
+                            <img src="{% static 'images/mobile-app-images/google-play.png' %}" alt="Google Play">
+                        </a>
+                        <a href="https://apps.apple.com/uz/app/e-auksion/id1630396070" target="_blank">
+                            <img src="{% static 'images/mobile-app-images/app-store.png' %}" alt="App Store">
+                        </a>
+                    </div>
+                </div>
+                <div class="mobile-app__description">
+                    A special and stylish application for your smartphone. Download and participate in the auction on 
+                    your mobile phone. And don't forget to update the app often to enjoy the latest features!
+                </div>
+        </div>
+     </section>
+    <!-- /Mobile section -->
+
+    <!-- Payment section -->
+     <section class="payment">
+        <div class="container">
+            <div class="payment-method">Payment methods</div>
+                <ul class="payment-types">
+                    <li class="payment-type">
+                        <a href="https://plum.uz/payment/1030">
+                            <img src="{% static 'images/payment-images/plum-home.png' %}" alt="Plum payment icon">
+                        </a>
+                    </li>
+                    <li class="payment-type">
+                        <a href="https://click.uz/uz#service_id=13203">
+                            <img src="{% static 'images/payment-images/click-home.png' %}" alt="Click payment icon">
+                        </a>
+                    </li>
+                    <li class="payment-type">
+                        <a href="https://payme.uz/home/payment/5c3d8662b20d521bf0ad6c47">
+                            <img src="{% static 'images/payment-images/payme-home.png' %}" alt="Payme payment icon">
+                        </a>
+                    </li>
+                    <li class="payment-type">
+                        <a href="https://www.paynet.uz/">
+                            <img src="{% static 'images/payment-images/paynet-home.png' %}" alt="Paynet payment icon">
+                        </a>
+                    </li>
+                    <li class="payment-type">
+                        <a href="https://oson.com/uz-uz">
+                            <img src="{% static 'images/payment-images/oson-home.png' %}" alt="Oson payment icon">
+                        </a>
+                    </li>
+                </ul>
+        </div>
+     </section>
+    <!-- /Payment section -->
+
+    <!-- Footer section -->
+     {% include 'footer.html' %}
+    <!-- /Footer section -->
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="{% static 'js/shared.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

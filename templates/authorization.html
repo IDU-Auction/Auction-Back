@@ -1,0 +1,163 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <title>E-Auction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'styles/shared.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/registration.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/authorization.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header section -->
+        <header class="header">
+                <nav class="navigation-items">
+                    <div class="container">
+                        <div class="navigation-items-wrapper">
+                            <div class="left-nav__items">
+                                <div class="main-logo">
+                                    <a href="index.html">
+                                        <img src="./images/header-images/main-logo.png" alt="Main Logo">
+                                    </a>
+                                </div>
+                                <ul class="date-time">
+                                    <li class="date-time-item">
+                                        <i class="far fa-calendar-alt"></i>
+                                        <span id="date"></span> (GMT+5)
+                                    </li>
+                                    <li class="date-time-item">
+                                        <i class="far fa-clock"></i>
+                                        <span id="time"></span>
+                                    </li>
+                                    <li class="extra-tool">
+                                        <img src="images/header-images/eyeglass.svg" alt="eyeglasses">
+                                        Special Abilities
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <button class="dropbtn">
+                                    <img src="images/header-images/en.png" alt="English">
+                                    EN
+                                    <i class="fa-solid fa-caret-down"></i>
+                                </button>
+                                <div class="dropdown-content">
+                                <a href="#">
+                                    <img src="images/header-images/uz.png" alt="Uzbek">
+                                    Uzbek
+                                </a>
+                                <a href="#">
+                                    <img src="images/header-images/ru.png" alt="Russian">
+                                    Russian
+                                </a>
+                                <a href="#">
+                                    <img src="images/header-images/en.png" alt="English">
+                                    English
+                                </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+        </header>
+    <!-- /Header section -->
+    
+    <!-- Authorization section -->
+        <div class="container">
+            <section class="authorization">
+                <div class="authorization-title">
+                    Sign in as participant/customer
+                </div>
+                <form action="#" method="post">
+                    {% csrf_token %}
+                    <div class="authorization-box">
+                        <div class="authorization-method">
+                            <p class="active">Phone</p>
+                            <p>E-mail</p>
+                            <p>One ID</p>
+                            <p>QR Code</p>
+                        </div>
+                        <div class="authorization__item">
+                            <div class="authorization-input">
+                                <div class="authorization-icon">
+                                    <i class="fa-solid fa-phone"></i>
+                                    <span>+998</span>
+                                </div>
+                                <input type="tel" name="phone_number" id="phone" maxlength="12" required>
+                            </div>
+                        </div>
+                        <div class="authorization__item">
+                            <div class="authorization-input">
+                                <div class="authorization-icon">
+                                    <i class="fa-solid fa-lock"></i>
+                                </div>
+                                <input type="password" name="password" id="password" placeholder="Password" required>
+                                <span class="toggle-password"><i class="fa-solid fa-eye"></i></span>
+                            </div>
+                        </div>
+                        <div class="authorization-button">
+                            <button type="submit">Enter</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="new-user__text">
+                    <span>Are you a new user?</span>
+                </div>
+                <div class="registration-button">
+                    <button type="button" onclick="location.href='registration.html'">Registration</button>
+                </div>
+            </section>
+        </div>
+    <!-- Authorization section -->
+
+    <!-- Footer section -->
+        <div class="container">
+            <section class="footer">
+                <div class="main-footer-info">
+                    <div class="left-footer-details">
+                        <p>© Copyright 2017-2025. JSC "Organizing electronic online <br>
+                            auctions". All rights reserved
+                        </p>
+                        <div class="social-media">
+                            <a href="#" class="social-media-image">
+                                <img src="./images/social-media-images/telegram.png" alt="telegram icon">
+                            </a>
+                            <a href="#" class="social-media-image">
+                                <img src="./images/social-media-images/facebook.png" alt="facebook icon">
+                            </a>
+                            <a href="#" class="social-media-image">
+                                <img src="./images/social-media-images/instagram.png" alt="instagram icon">
+                            </a>
+                            <a href="#" class="social-media-image">
+                                <img src="./images/social-media-images/twitter.png" alt="twitter icon">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="right-footer-details">
+                        <div class="phone">
+                            <div class="phone-number">+998 71 202-21-11</div>
+                             <div class="phone-icon1">
+                                <div class="phone-icon2">
+                                    <div class="phone-icon3">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="extra-footer-info">Veb-saytdagi axborot materiallaridan boshqa shaxslar foydalanganda jamiyatning korporativ 
+                    veb-saytiga majburiy havolalar korsatilishi kerak
+                </p>
+            </section>
+        </div>
+    <!-- /Footer section -->
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/registration.js' %}"></script>
+</body>
+</html>

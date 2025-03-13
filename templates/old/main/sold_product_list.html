@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block main %}
+<div class="row">
+    <!-- Products List -->
+
+    {% if sold_products %}
+    {% for item in sold_products %}
+    <a href="{% url 'product-detail' item.id %}" class="col-md-4">
+        <h4>{{item.name}}</h4>
+        <img src="{{item.image.url}}" alt="" style="height: 250px;">
+        <h5>{{item.initial_price}} so'm</h5>
+    </a>
+    {% endfor %}
+    {% else %}
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,159 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <title>E-Auction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'styles/shared.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/lot.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head> 
+<body>
+    <!-- Header section -->
+    {% include 'header.html' %}
+    <!-- /Header section -->
+
+    <!-- Lot section -->
+        <section class="lot">
+            <div class="container">
+                <div class="breadcrumbs">
+                    <a href="index.html">Home</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <a href="lots.html">Lots</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <a href="lot.html" class="active">Lot ID</a>
+                </div>
+                <div class="lot-detail">
+                    <div class="lot-card__image">
+                        <div class="lot-image">
+                            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                        </div>
+                    </div>
+                    <div class="lot-card__details">
+                        <div class="lot-id">
+                            <span class="lot-card-number-title">Lot #</span>
+                            <span class="lot-card-number">{{ product.id }}</span>
+                        </div>
+                        <div class="lot-title">
+                            {{ product.name }}
+                        </div>
+                        <div class="lot-card-attributes">
+                            <div class="d-flex">
+                                <div class="lot-card__info">
+                                    <div class="lot-card-attribute__title">
+                                        <img src="{% static 'images/lot-detail-images/application_date_icon.png' %}" alt="Application_daeadline">
+                                        <span>Application Deadline</span>
+                                    </div>
+                                    <div class="lot-card-attribute__value">{{ product.end_time }}</div>
+                                </div>
+                                <div class="lot-card__info">
+                                    <div class="lot-card-attribute__title">
+                                        <img src="{% static 'images/lot-detail-images/end_auction_date.png' %}" alt="end auctions">
+                                        <span>Auction time</span>
+                                    </div>
+                                    <div class="lot-card-attribute__value">-------</div>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <div class="lot-card__info">
+                                    <div class="lot-card-attribute__title">
+                                        <img src="{% static 'images/lot-detail-images/baholangan_narx_icon.png' %}" alt="actual price">
+                                        <span>Starting Price</span>
+                                    </div>
+                                    <div class="lot-card-attribute__value">{{ product.initial_price }} UZS</div>
+                                </div>
+                                <div class="lot-card__info">
+                                    <div class="lot-card-attribute__title">
+                                        <img src="{% static 'images/lot-detail-images/zakalad_icon.png' %}" alt="deposite">
+                                        <span>Deposite amount (10%)</span>
+                                    </div>
+                                    <div class="lot-card-attribute__value">-----------</div>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <div class="lot-card__info">
+                                    <div class="lot-card-attribute__title">
+                                        <img src="{% static 'images/lot-detail-images/type_auction.png' %}" alt="actual price">
+                                        <span>Bidding method</span>
+                                    </div>
+                                    <div class="lot-card-attribute__value">Auction</div>
+                                </div>
+                                <div class="lot-card__info">
+                                    <div class="lot-card-attribute__title">
+                                        <img src="{% static 'images/lot-detail-images/sort_auction_icon.png' %}" alt="deposite">
+                                        <span>Bidding method</span>
+                                    </div>
+                                    <div class="lot-card-attribute__value">On increasing</div>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <div class="lot-card__info">
+                                    <div class="lot-card-attribute__title">
+                                        <i class="fa-solid fa-list-ul"></i>
+                                        <span>First step (5%)</span>
+                                    </div>
+                                    <div class="lot-card-attribute__value">-------------- UZS</div>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <div>
+                                    <div class="lot-card-attribute__title">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <span>Address</span>
+                                    </div>
+                                    <div class="lot-card-attribute__value">------------------------</div>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <div>
+                                    <div class="lot-card-attribute__title">
+                                        <i class="fa-solid fa-exclamation"></i>
+                                        <span>Lot status</span>
+                                    </div>
+                                    <div class="lot-card-attribute__value" style="color: #388e3c;">
+                                        {% if product.auction %}
+                                            Acceptance of electronic applications for participation
+                                        {% else %}
+                                            CLOSED
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lot-card-statistics">
+                                <ul class="lot-statistics-icons">
+                                    <li class="lot-icon">
+                                        <i class="fa-regular fa-user"></i>
+                                        <span>10</span>
+                                    </li>
+                                    <li class="lot-icon">
+                                        <i class="fa-regular fa-eye"></i>
+                                        <span>340</span>
+                                    </li>
+                                    <li class="lot-icon">
+                                        <i class="fa-regular fa-heart"></i>
+                                        <span>275</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="extra-lot__detail">
+
+                </div>
+            </div>
+        </section>
+    <!-- /Lot section -->
+
+    <!-- Footer section -->
+    {% include 'footer.html' %}
+    <!-- /Footer section -->
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="{% static 'js/shared.js' %}"></script>
+</body>
+</html>

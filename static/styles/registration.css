@@ -1,0 +1,242 @@
+/* Header Section */
+body {
+    background-color: #fff;
+}
+
+.navigation-items-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 3.125rem;
+    padding-right: 6.25rem;
+}
+
+.left-nav__items {
+    display: flex;
+    align-items: center;
+}
+
+.date-time {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+}
+
+.date-time li {
+    font-size: 1rem;
+    margin-right: 0.875rem;
+    line-height: 2.125rem;
+    color: #023581;
+    font-weight: 300;
+}
+/* /Header Section */
+
+/* Registration section */
+.registration {
+    width: 700px;
+    margin: 0 auto;
+    margin-top: 75px;
+    margin-bottom: 75px;
+    text-align: center;
+
+}
+
+.registration-header {
+    margin-left: 1.875rem;
+    margin-right: 1.875rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.625rem;
+    color: #023581;
+    line-height: 1.6875rem;
+    font-size: 1.125rem;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 0.25rem solid #E9AC1C;
+    display: grid;
+    grid-template-columns: 20px auto 20px;
+    align-items: center;
+}
+
+.registration-header a {
+    font-size: 1.875rem;
+    color: #023581;
+}
+
+.registration-form {
+    padding: 20px 40px 20px 40px;
+    border: 1px solid rgba(3, 58, 141, 0.2);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12);
+    background-color: #FFF;
+}
+
+.reg-sub-form {
+    padding: 1rem 1rem 0 1rem;
+}
+
+.registration-method {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem; 
+    align-items: center;
+    min-height: 2.25rem;
+
+}
+
+.using-phone {
+    width: 50%;
+    font-size: 0.875rem;
+    line-height: 1.715em;
+    font-weight: 500;
+    color: #1976D2;
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid #1976D2;
+}
+
+.using-email {
+    width: 50%;
+    font-size: 0.875rem;
+    line-height: 1.715em;
+    font-weight: 500;
+    color: #9E9E9E;
+    padding-bottom: 0.25rem; 
+    border-bottom: 1px solid #9E9E9E;
+}
+
+.registration-form__item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.reg-input {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 0 0.75rem;
+    border-radius: 0.25rem;
+    transition: border 0.5s ease-in-out;
+    height: 56px;
+}
+
+.reg-input:hover {
+    border: 1px solid black;
+}
+
+.reg-input:focus-within {
+    border: 1px solid #1976D2;
+    transition: border-color 0.36s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reg-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.reg-icon i {
+    padding-right: 0.5rem;
+    color: #757575;
+}
+
+.reg-input input {
+    border: none;
+    width: 100%;
+    outline: none;
+    line-height: 1.875rem;
+    font-size: 1rem;
+    background: none;
+}
+
+.reg-input input::placeholder {
+    color: #757575;
+    transition: font-size 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+}
+
+.reg-input:focus-within input::placeholder {
+    font-size: 12px;
+    transform: translateY(-10px);
+    opacity: 0.7;
+}
+
+/* Password Toggle Button */
+.toggle-password {
+    cursor: pointer;
+    padding-left: 10px;
+    font-size: 1.2rem;
+    color: #757575;
+}
+
+/* Strength Meter */
+#strengthMeter {
+    width: 100%;
+    height: 8px;
+    background: #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+#strengthBar {
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease-in-out;
+}
+
+.very-weak { background: red; }
+.weak { background: orange; }
+.medium { background: yellow; }
+.strong { background: green; }
+
+/* Strength Message */
+#strengthMessage {
+    font-weight: 300;
+    margin-top: 0.3125rem;
+    text-align: left;
+}
+
+/* Password Match Message */
+#passwordMatchMessage {
+    font-weight: 300;
+    margin-top: 0.3125rem;
+    text-align: left;
+}
+
+#phoneError {
+    color: red;
+    font-size: 0.875rem;
+    font-weight: 300;
+    text-align: left;
+}
+
+.confirmation-btn {
+    margin: 30px 20% 0 20%;
+    height: 46px;
+    display: flex;
+}
+
+.confirmation-btn button {
+    background-color: #023581;
+    color: #FFF;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 2.25rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 0.25rem;
+    width: 100%;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12);
+    transition: all 0.5s ease-in-out ;
+}
+
+.confirmation-btn button:hover {
+    background-color: #fff;
+    border: 1px solid #023581;
+    color: #023581;
+}
+
+/* /Registration section */

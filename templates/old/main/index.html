@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block main %}
+<div class="row">
+
+    <div class="categories">
+        <!-- Categories List -->
+        {% for item in categories %}
+        <a href="{% url 'product-list' item.id %}" class="col-md-4" style="background-color: aqua; display: inline-block;">
+            <h4>{{item.name}}</h4>
+            <img src="{{item.icon.url}}" alt="" style="height: 50px;">
+        </a>
+        {% endfor %}
+    </div>
+
+    <br><br><br>
+
+    <div class="products">
+        <!-- Products List -->
+        {% for item in products %}
+        <a href="{% url 'product-detail' item.id %}" class="col-md-4">
+            <h4>{{item.name}}</h4>
+            <img src="{{item.image.url}}" alt="" style="height: 250px;">
+            <h5>{{item.initial_price}} so'm</h5>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
