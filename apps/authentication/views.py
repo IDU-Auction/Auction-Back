@@ -8,9 +8,12 @@ from .models import CustomUser
 def sign_in(request):
 
     if request.POST:
-        username = request.POST.get('username')
+        phone_number = '+998' + "".join(request.POST.get('phone_number').split('-'))
         password = request.POST.get('password')
-        user = authenticate(request, username=username, password=password)
+        print('phone_number: ', phone_number)
+        print('password: ', password)
+        user = authenticate(request, phone_number=phone_number, password=password)
+        print('user: ', user)
         if user:
             login(request, user)
             return redirect('main')
@@ -23,10 +26,7 @@ def sign_in(request):
 def sign_up(request):
 
     if request.POST:
-        # first_name = request.POST.get('first_name')
-        # last_name = request.POST.get('last_name')
-        # email = request.POST.get('email')
-        phone_number = request.POST.get('phone_number')
+        phone_number = '+998' + "".join(request.POST.get('phone_number').split('-'))
         password1 = request.POST.get('password1')
         password2 = request.POST.get('password2')
         if password1 != password2:

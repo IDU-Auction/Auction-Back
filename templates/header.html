@@ -49,7 +49,7 @@
                         </div>
                     </div>
                     {% if user.is_authenticated %}
-                    <span class="reg-button"><a href="{% url 'register' %}">Log out</a></span>
+                    <span class="reg-button"><a href="{% url 'logout' %}">Log out</a></span>
                     {% else %}
                     <span class="reg-button"><a href="{% url 'register' %}">Register</a></span>
                     <a href="{% url 'login' %}"><button type="button" class="sign-in-btn">Sign in</button></a>
