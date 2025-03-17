@@ -148,6 +148,113 @@
         </section>
     <!-- /Lot section -->
 
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <h4>{{product.name}}</h4>
+            <h5>{{product.initial_price}} so'm</h5>
+            <p>Time left: <span id="timer"></span></p>
+            <h5>{{product.description}}</h5>
+            <div id="price-adding">
+                <input type="number" id="price-input" placeholder="Enter price" />
+                <button id="add-price-btn">Add Price</button>
+            </div>        
+        </div>
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-body table-responsive p-0">
+                    <table class="table table-striped text-nowrap">
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in product.prices %}
+                            <tr>
+                                <td>{{item.user.username}}</td>
+                                <td>{{item.price}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const endTime = "{{ product.end_time|date:'c' }}"; // ISO 8601 format
+        function startCountdown(endTime) {
+            const timerElement = document.getElementById('timer');
+            const endDate = new Date(endTime).getTime();
+    
+            function updateTimer() {
+                const now = new Date().getTime();
+                const timeLeft = endDate - now;
+    
+                if (timeLeft <= 0) {
+                    timerElement.innerHTML = "Time's up!";
+                    clearInterval(intervalId);
+    
+                    // Disable price adding
+                    const price_adding = document.getElementById('price-adding')
+                    if (price_adding) {
+                        price_adding.remove()
+                    }
+    
+                    return;
+                }
+    
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+    
+                timerElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            }
+    
+            const intervalId = setInterval(updateTimer, 1000);
+            updateTimer(); // Call once immediately
+        }
+        startCountdown(endTime);
+    
+        const productId = '{{ product.id }}';
+        const userId = '{{ request.user.id }}'; // Pass the user's ID if authenticated
+        const ws = new WebSocket(`ws://${window.location.host}/ws/prices/${productId}/`);
+    
+        ws.onmessage = function(event) {
+            const data = JSON.parse(event.data);
+            const prices = data.prices;
+    
+            const tableBody = document.querySelector('table tbody');
+            tableBody.innerHTML = ''; // Clear the table
+    
+            // Populate table with updated price list
+            prices.forEach(price => {
+                const newRow = document.createElement('tr');
+                newRow.innerHTML = `<td>${price.user__full_name}</td><td>${price.price}</td>`;
+                tableBody.appendChild(newRow);
+            });
+        };
+    
+        ws.onclose = function() {
+            console.error('WebSocket closed unexpectedly');
+        };
+    
+        // Example: Send a new price to the server
+        document.getElementById('add-price-btn').addEventListener('click', () => {
+            const priceValue = document.getElementById('price-input').value;
+    
+            if (priceValue) {
+                ws.send(JSON.stringify({
+                    user_id: userId,
+                    price: priceValue,
+                }));
+            }
+        });
+    </script>
+
     <!-- Footer section -->
     {% include 'footer.html' %}
     <!-- /Footer section -->

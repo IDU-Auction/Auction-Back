@@ -1,8 +1,9 @@
 import json
 from channels.generic.websocket import AsyncWebsocketConsumer
 from .models import Price, Product
-from django.contrib.auth.models import User
 from asgiref.sync import sync_to_async
+
+from apps.authentication.models import CustomUser
 
 class PriceConsumer(AsyncWebsocketConsumer):
     async def connect(self):
@@ -49,7 +50,7 @@ class PriceConsumer(AsyncWebsocketConsumer):
         """
         Save the new price and return the updated list of prices.
         """
-        user = User.objects.get(id=user_id)
+        user = CustomUser.objects.get(id=user_id)
         product = Product.objects.get(id=self.product_id)
         
         # Create a new Price instance
@@ -64,8 +65,9 @@ class PriceConsumer(AsyncWebsocketConsumer):
 
         # Fetch updated list of prices for the product
         prices = Price.objects.filter(product=product).order_by('-date').values(
-            'user__username', 'price'
+            'user__full_name', 'price'
         )
+        print(prices)
         return list(prices)
 
     async def price_list_update(self, event):
