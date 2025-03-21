@@ -22,7 +22,7 @@
                 <div class="authorization-title">
                     Sign in as participant/customer
                 </div>
-                <form action="#" method="post">
+                <form method="post">
                     {% csrf_token %}
                     <div class="authorization-box">
                         <div class="authorization-method">
@@ -42,7 +42,8 @@
                         </div>
                         <div class="authorization__item">
                             <div class="authorization-input">
-                                <div class="authorization-icon">
+                                <div class="authos
+                                rization-icon">
                                     <i class="fa-solid fa-lock"></i>
                                 </div>
                                 <input type="password" name="password" id="password" placeholder="Password" required>
@@ -58,7 +59,7 @@
                     <span>Are you a new user?</span>
                 </div>
                 <div class="registration-button">
-                    <button type="button" onclick="location.href='registration.html'">Registration</button>
+                    <button type="button" onclick="location.href=`{% url 'register' %}`">Registration</button>
                 </div>
             </section>
         </div>

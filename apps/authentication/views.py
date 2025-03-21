@@ -8,15 +8,20 @@ from .models import CustomUser
 def sign_in(request):
 
     if request.POST:
-        phone_number = '+998' + "".join(request.POST.get('phone_number').split('-'))
+        phone_number = '+998' + request.POST.get('phone_number').replace('-', '').strip()
         password = request.POST.get('password')
-        print('phone_number: ', phone_number)
-        print('password: ', password)
-        user = authenticate(request, phone_number=phone_number, password=password)
-        print('user: ', user)
-        if user:
-            login(request, user)
-            return redirect('main')
+        custom_user = CustomUser.objects.filter(phone_number=phone_number).first()
+        if custom_user:
+            print(custom_user)
+            print(custom_user.check_password(password))
+            if custom_user.check_password(password):
+                print('phone_number:', phone_number)
+                print('password:', password)
+                # user = authenticate(request, username=phone_number, password=password)
+                # print('user:', user)
+                # if user:
+                login(request, custom_user)
+                return redirect('main')
         else:
             return redirect('login')
 
@@ -35,7 +40,9 @@ def sign_up(request):
         
         existing_phone_number = CustomUser.objects.filter(phone_number=phone_number).first()
         if not existing_phone_number:
-            user = CustomUser.objects.create(phone_number=phone_number, password=password1)
+            user = CustomUser.objects.create(phone_number=phone_number)
+            user.set_password(password1)
+            user.save()
             return redirect('login')
         else:
             return redirect('register')
