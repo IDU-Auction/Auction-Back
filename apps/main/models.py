@@ -37,6 +37,10 @@ class Product(models.Model):
     def prices(self):
         return Price.objects.filter(product=self).order_by('-date')
 
+    @property
+    def initial_price_format(self):
+        return '{:7,.1f}'.format(self.initial_price)
+
     def __str__(self):
         return self.name
 
@@ -53,6 +57,10 @@ class Price(models.Model):
         verbose_name = "Цена"
         verbose_name_plural = "Цены"
     
+    @property
+    def price_format(self):
+        return '{:7,.1f}'.format(self.price)
+
     def __str__(self):
         return f"{self.price} from {self.user} for {self.product}"
 

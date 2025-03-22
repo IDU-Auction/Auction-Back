@@ -65,7 +65,7 @@ class PriceConsumer(AsyncWebsocketConsumer):
 
         # Fetch updated list of prices for the product
         prices = Price.objects.filter(product=product).order_by('-date').values(
-            'user__label', 'price'
+            'user__phone_number', 'price'
         )
         print(prices)
         return list(prices)

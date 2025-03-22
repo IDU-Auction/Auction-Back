@@ -65,7 +65,7 @@
                                             <img src="{% static 'images/lot-detail-images/baholangan_narx_icon.png' %}" alt="actual price">
                                             <span>Starting Price</span>
                                         </div>
-                                        <div class="lot-card-attribute__value">{{ product.initial_price }} UZS</div>
+                                        <div class="lot-card-attribute__value">{{ product.initial_price_format }} UZS</div>
                                     </div>
                                     <div class="lot-card__info">
                                         <div class="lot-card-attribute__title">
@@ -253,7 +253,7 @@
                                 {% for item in product.prices %}
                                 <tr>
                                     <td>{{item.user.phone_number}}</td>
-                                    <td>{{item.price}}</td>
+                                    <td>{{item.price_format}}</td>
                                 </tr>
                                 {% endfor %}
                             </tbody>
@@ -307,7 +307,7 @@
             // Populate table with updated price list
             prices.forEach(price => {
                 const newRow = document.createElement('tr');
-                newRow.innerHTML = `<td>${price.user__label}</td><td>${formatNumber(price.price)}</td>`;
+                newRow.innerHTML = `<td>${price.user__phone_number}</td><td>${formatNumber(price.price)}</td>`;
                 tableBody.appendChild(newRow);
             });
         };
