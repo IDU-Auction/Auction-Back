@@ -31,7 +31,10 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     @property
     def label(self):
-        return self.full_name if self.full_name else self.phone_number
+        if self.full_name:
+            return self.full_name
+        else:
+            return self.phone_number 
 
     def __str__(self):
         return self.label
