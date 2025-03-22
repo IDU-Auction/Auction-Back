@@ -307,7 +307,7 @@
             // Populate table with updated price list
             prices.forEach(price => {
                 const newRow = document.createElement('tr');
-                newRow.innerHTML = `<td>${price.user__label}</td><td>${price.price}</td>`;
+                newRow.innerHTML = `<td>${price.user__label}</td><td>${formatNumber(price.price)}</td>`;
                 tableBody.appendChild(newRow);
             });
         };
@@ -327,6 +327,10 @@
                 }));
             }
         });
+
+        function formatNumber(num) {
+            return num.toFixed(1).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
     </script>
     {% endif %}
 
