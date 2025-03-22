@@ -5,7 +5,7 @@
             <div class="upper-navigation__items">
                 <div class="upper-left-navigation-items">
                      <div class="main-logo">
-                         <a href="index.html">
+                         <a href="{% url 'main' %}">
                              <img src="{% static 'images/header/main-logo.png' %}" alt="Main Logo">
                          </a>
                      </div>
@@ -17,9 +17,9 @@
                      </div>
                  </div>
                  <div class="upper-right-navigation-items">
-                     <a href="index.html"><img src="{% static 'images/header/ipo.png' %}" alt="IPO Partner image"></a>
-                     <a href="index.html"><img src="{% static 'images/header/e-auction-shop.png' %}" alt="E-Auction-Shop image"></a>
-                     <a href="index.html"><img src="{% static 'images/header/assistant.png' %}" alt="Assistant image"></a>
+                     <a href="{% url 'main' %}"><img src="{% static 'images/header/ipo.png' %}" alt="IPO Partner image"></a>
+                     <a href="{% url 'main' %}"><img src="{% static 'images/header/e-auction-shop.png' %}" alt="E-Auction-Shop image"></a>
+                     <a href="{% url 'main' %}"><img src="{% static 'images/header/assistant.png' %}" alt="Assistant image"></a>
                      <span class="demo-version">
                          <i class="fa-solid fa-laptop"></i>
                          Demo
