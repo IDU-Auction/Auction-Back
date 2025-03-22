@@ -148,6 +148,7 @@
         </section>
     <!-- /Lot section -->
 
+    {% if user.is_authenticated %}
     <div class="row">
         <div class="col-md-4 mb-3">
             <h4>{{product.name}}</h4>
@@ -254,6 +255,7 @@
             }
         });
     </script>
+    {% endif %}
 
     <!-- Footer section -->
     {% include 'footer.html' %}
