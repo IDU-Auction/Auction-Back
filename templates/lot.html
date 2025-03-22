@@ -267,7 +267,7 @@
 
     {% if user.is_authenticated %}
     <script>
-        const endTime = "{{ product.end_time|date:'c' }}"; // ISO 8601 format
+        const endTime = new Date("{{ product.end_time|date:'c' }}").getTime(); // ISO 8601 format
         function startCountdown(endDate) {
             function updateCountdown() {
                 const now = new Date().getTime();
