@@ -17,231 +17,229 @@
     <!-- /Header section -->
 
     <!-- Lot section -->
-        <section class="lot">
-            <div class="container">
-                <div class="breadcrumbs">
-                    <a href="index.html">Home</a>
-                    <i class="fa-solid fa-chevron-right"></i>
-                    <a href="lots.html">Lots</a>
-                    <i class="fa-solid fa-chevron-right"></i>
-                    <a href="lot.html" class="active">Lot ID</a>
-                </div>
-                <div class="lot-detail">
-                    <div class="main-lot-details">
-                        <div class="lot-card__image">
-                            <div class="lot-image">
-                                <img src="{{ product.image.url }}" alt="{{ product.name }}">
-                            </div>
-                        </div>
-                        <div class="lot-card__details">
-                            <div class="lot-id">
-                                <span class="lot-card-number-title">Lot #</span>
-                                <span class="lot-card-number">{{ product.id }}</span>
-                            </div>
-                            <div class="lot-title">
-                                {{ product.name }}
-                            </div>
-                            <div class="lot-card-attributes">
-                                <div class="d-flex">
-                                    <div class="lot-card__info">
-                                        <div class="lot-card-attribute__title">
-                                            <img src="{% static 'images/lot-detail-images/application_date_icon.png' %}" alt="Application_daeadline">
-                                            <span>Application Deadline</span>
-                                        </div>
-                                        <div class="lot-card-attribute__value">{{ product.end_time }}</div>
-                                    </div>
-                                    <div class="lot-card__info">
-                                        <div class="lot-card-attribute__title">
-                                            <img src="{% static 'images/lot-detail-images/end_auction_date.png' %}" alt="end auctions">
-                                            <span>Auction time</span>
-                                        </div>
-                                        <div class="lot-card-attribute__value">-------</div>
-                                    </div>
-                                </div>
-                                <div class="d-flex">
-                                    <div class="lot-card__info">
-                                        <div class="lot-card-attribute__title">
-                                            <img src="{% static 'images/lot-detail-images/baholangan_narx_icon.png' %}" alt="actual price">
-                                            <span>Starting Price</span>
-                                        </div>
-                                        <div class="lot-card-attribute__value">{{ product.initial_price }} UZS</div>
-                                    </div>
-                                    <div class="lot-card__info">
-                                        <div class="lot-card-attribute__title">
-                                            <img src="{% static 'images/lot-detail-images/zakalad_icon.png' %}" alt="deposite">
-                                            <span>Deposite amount (10%)</span>
-                                        </div>
-                                        <div class="lot-card-attribute__value">-----------</div>
-                                    </div>
-                                </div>
-                                <div class="d-flex">
-                                    <div class="lot-card__info">
-                                        <div class="lot-card-attribute__title">
-                                            <img src="{% static 'images/lot-detail-images/type_auction.png' %}" alt="actual price">
-                                            <span>Bidding method</span>
-                                        </div>
-                                        <div class="lot-card-attribute__value">Auction</div>
-                                    </div>
-                                    <div class="lot-card__info">
-                                        <div class="lot-card-attribute__title">
-                                            <img src="{% static 'images/lot-detail-images/sort_auction_icon.png' %}" alt="deposite">
-                                            <span>Bidding method</span>
-                                        </div>
-                                        <div class="lot-card-attribute__value">On increasing</div>
-                                    </div>
-                                </div>
-                                <div class="d-flex">
-                                    <div class="lot-card__info">
-                                        <div class="lot-card-attribute__title">
-                                            <i class="fa-solid fa-list-ul"></i>
-                                            <span>First step (5%)</span>
-                                        </div>
-                                        <div class="lot-card-attribute__value">-------------- UZS</div>
-                                    </div>
-                                </div>
-                                <div class="d-flex">
-                                    <div>
-                                        <div class="lot-card-attribute__title">
-                                            <i class="fa-solid fa-location-dot"></i>
-                                            <span>Address</span>
-                                        </div>
-                                        <div class="lot-card-attribute__value">------------------------</div>
-                                    </div>
-                                </div>
-                                <div class="d-flex">
-                                    <div>
-                                        <div class="lot-card-attribute__title">
-                                            <i class="fa-solid fa-exclamation"></i>
-                                            <span>Lot status</span>
-                                        </div>
-                                        <div class="lot-card-attribute__value" style="color: #388e3c;">
-                                            {% if product.auction %}
-                                                Acceptance of electronic applications for participation
-                                            {% else %}
-                                                CLOSED
-                                            {% endif %}
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="lot-card-statistics">
-                                    <ul class="lot-statistics-icons">
-                                        <li class="lot-icon">
-                                            <i class="fa-regular fa-user"></i>
-                                            <span>10</span>
-                                        </li>
-                                        <li class="lot-icon">
-                                            <i class="fa-regular fa-eye"></i>
-                                            <span>340</span>
-                                        </li>
-                                        <li class="lot-icon">
-                                            <i class="fa-regular fa-heart"></i>
-                                            <span>275</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+    <section class="lot">
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <a href="lots.html">Lots</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <a href="lot.html" class="active">Lot ID</a>
+            </div>
+            <div class="lot-detail">
+                <div class="main-lot-details">
+                    <div class="lot-card__image">
+                        <div class="lot-image">
+                            <img src="{{ product.image.url }}" alt="{{ product.name }}">
                         </div>
                     </div>
-                    <div class="lot-important__info">
-                        <div class="reminder reminder-animation">
-                            <span class="red-text">Reminder:</span><br>
-                            According to the resolution of the president of the Republic of Uzbekistan PQ-162 of 19.04.2024, in the process of electronic online auction trading held on this lot, participants are required to have a current (12.5) percentage deposit <span class="red-text">amount in their personal account</span> with respect to the price offer <span class="red-text">from the third step</span>. In this case, these funds are taken into account as deposit.
+                    <div class="lot-card__details">
+                        <div class="lot-id">
+                            <span class="lot-card-number-title">Lot #</span>
+                            <span class="lot-card-number">{{ product.id }}</span>
                         </div>
-                        <div class="important-information">
-                            <span style="font-weight: bold;">Important information:</span><br>
-                                O‘zbekiston Respublikasi Prezidentining 06.09.2024-yildagi PF-135-son Farmoniga asosan qishloq xoʻjaligiga moʻljallanmagan yer uchastkalarini mulk huquqi yoki ijara huquqi asosida, qishloq xoʻjaligiga moʻljallangan yer uchastkalarini ijara huquqi asosida sotib olish qiymatini quyidagi shartlarda har oyda teng ulushlarda, qoldiq summaga Markaziy bankning asosiy stavkasida foiz hisoblagan holda boʻlib-boʻlib toʻlashga beriladi: <br>
-                                - Toshkent shahri, Nukus shahri va viloyat markazlarida – 3 yil davomida kamida 35 foiz miqdorida dastlabgi toʻlovni oʻn besh ish kunida amalga oshirish sharti bilan; <br>
-                                - boshqa aholi punktlarida – 5 yil davomida 15 foiz miqdorida dastlabki toʻlovni oʻn besh ish kunida amalga oshirish sharti bilan;
-                                - 4- va 5-toifalardagi tumanlarda esa 10 yil davomida kamida 15 foiz miqdorida dastlabki toʻlovni oʻn besh ish kunida amalga oshirish sharti bilan; <br>
-                                - barcha turdagi yer uchastkalarining qiymati oʻn besh ish kunida toʻliq toʻlangan taqdirda, jami summaga nisbatan 20 foiz chegirma berilishi, bunda boshlangʻich narxi 50 foizdan ortiqqa pasaytirilgan holda realizatsiya qilingan yer uchastkalari mustasno.
+                        <div class="lot-title">
+                            {{ product.name }}
                         </div>
-                    </div>
-                    <div class="lot-faqs">
-                        <div class="accordion">
-                            <div class="accordion-item">
-                                <button class="accordion-button">Lot information <i class="fas fa-chevron-down"></i></button>
-                                <div class="accordion-content">
-                                    <p>Details about the lot...</p>
+                        <div class="lot-card-attributes">
+                            <div class="d-flex">
+                                <div class="lot-card__info">
+                                    <div class="lot-card-attribute__title">
+                                        <img src="{% static 'images/lot-detail-images/application_date_icon.png' %}" alt="Application_daeadline">
+                                        <span>Application Deadline</span>
+                                    </div>
+                                    <div class="lot-card-attribute__value">{{ product.end_time }}</div>
+                                </div>
+                                <div class="lot-card__info">
+                                    <div class="lot-card-attribute__title">
+                                        <img src="{% static 'images/lot-detail-images/end_auction_date.png' %}" alt="end auctions">
+                                        <span>Auction time</span>
+                                    </div>
+                                    <div class="lot-card-attribute__value">-------</div>
                                 </div>
                             </div>
-                            <div class="accordion-item">
-                                <button class="accordion-button">Property information <i class="fas fa-chevron-down"></i></button>
-                                <div class="accordion-content">
-                                    <p>Details about the property...</p>
+                            <div class="d-flex">
+                                <div class="lot-card__info">
+                                    <div class="lot-card-attribute__title">
+                                        <img src="{% static 'images/lot-detail-images/baholangan_narx_icon.png' %}" alt="actual price">
+                                        <span>Starting Price</span>
+                                    </div>
+                                    <div class="lot-card-attribute__value">{{ product.initial_price }} UZS</div>
+                                </div>
+                                <div class="lot-card__info">
+                                    <div class="lot-card-attribute__title">
+                                        <img src="{% static 'images/lot-detail-images/zakalad_icon.png' %}" alt="deposite">
+                                        <span>Deposite amount (10%)</span>
+                                    </div>
+                                    <div class="lot-card-attribute__value">-----------</div>
                                 </div>
                             </div>
-                            <div class="accordion-item">
-                                <button class="accordion-button">Customer information <i class="fas fa-chevron-down"></i></button>
-                                <div class="accordion-content">
-                                    <p>Details about the customer...</p>
+                            <div class="d-flex">
+                                <div class="lot-card__info">
+                                    <div class="lot-card-attribute__title">
+                                        <img src="{% static 'images/lot-detail-images/type_auction.png' %}" alt="actual price">
+                                        <span>Bidding method</span>
+                                    </div>
+                                    <div class="lot-card-attribute__value">Auction</div>
+                                </div>
+                                <div class="lot-card__info">
+                                    <div class="lot-card-attribute__title">
+                                        <img src="{% static 'images/lot-detail-images/sort_auction_icon.png' %}" alt="deposite">
+                                        <span>Bidding method</span>
+                                    </div>
+                                    <div class="lot-card-attribute__value">On increasing</div>
                                 </div>
                             </div>
-                            <div class="accordion-item">
-                                <button class="accordion-button">Lot documents <i class="fas fa-chevron-down"></i></button>
-                                <div class="accordion-content">
-                                    <p>Documents related to the lot...</p>
+                            <div class="d-flex">
+                                <div class="lot-card__info">
+                                    <div class="lot-card-attribute__title">
+                                        <i class="fa-solid fa-list-ul"></i>
+                                        <span>First step (5%)</span>
+                                    </div>
+                                    <div class="lot-card-attribute__value">-------------- UZS</div>
                                 </div>
+                            </div>
+                            <div class="d-flex">
+                                <div>
+                                    <div class="lot-card-attribute__title">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <span>Address</span>
+                                    </div>
+                                    <div class="lot-card-attribute__value">------------------------</div>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <div>
+                                    <div class="lot-card-attribute__title">
+                                        <i class="fa-solid fa-exclamation"></i>
+                                        <span>Lot status</span>
+                                    </div>
+                                    <div class="lot-card-attribute__value" style="color: #388e3c;">
+                                        {% if product.auction %}
+                                            Acceptance of electronic applications for participation
+                                        {% else %}
+                                            CLOSED
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lot-card-statistics">
+                                <ul class="lot-statistics-icons">
+                                    <li class="lot-icon">
+                                        <i class="fa-regular fa-user"></i>
+                                        <span>10</span>
+                                    </li>
+                                    <li class="lot-icon">
+                                        <i class="fa-regular fa-eye"></i>
+                                        <span>340</span>
+                                    </li>
+                                    <li class="lot-icon">
+                                        <i class="fa-regular fa-heart"></i>
+                                        <span>275</span>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="extra-lot__detail">
-                    <div class="extra-lot__details">
-                        <div class="bg">
-                            <div class="extra-lot-item">
-                                <div class="exta-card__title">Application deadline</div>
-                                <div class="border"></div>
-                                <div class="countdown-wrapper">
-                                    <div class="countdown-item">
-                                        <span id="days" class="countdown-number">00</span>
-                                        <span class="countdown-label">DAYS</span>
-                                    </div>
-                                    <div class="countdown-item">
-                                        <span id="hours" class="countdown-number">00</span>
-                                        <span class="countdown-label">HOUR</span>
-                                    </div>
-                                    <div class="countdown-item">
-                                        <span id="minutes" class="countdown-number">00</span>
-                                        <span class="countdown-label">MINUTES</span>
-                                    </div>
-                                    <div class="countdown-item">
-                                        <span id="seconds" class="countdown-number">00</span>
-                                        <span class="countdown-label">SECONDS</span>
-                                    </div>
-                                </div>
+                <div class="lot-important__info">
+                    <div class="reminder reminder-animation">
+                        <span class="red-text">Reminder:</span><br>
+                        According to the resolution of the president of the Republic of Uzbekistan PQ-162 of 19.04.2024, in the process of electronic online auction trading held on this lot, participants are required to have a current (12.5) percentage deposit <span class="red-text">amount in their personal account</span> with respect to the price offer <span class="red-text">from the third step</span>. In this case, these funds are taken into account as deposit.
+                    </div>
+                    <div class="important-information">
+                        <span style="font-weight: bold;">Important information:</span><br>
+                            O‘zbekiston Respublikasi Prezidentining 06.09.2024-yildagi PF-135-son Farmoniga asosan qishloq xoʻjaligiga moʻljallanmagan yer uchastkalarini mulk huquqi yoki ijara huquqi asosida, qishloq xoʻjaligiga moʻljallangan yer uchastkalarini ijara huquqi asosida sotib olish qiymatini quyidagi shartlarda har oyda teng ulushlarda, qoldiq summaga Markaziy bankning asosiy stavkasida foiz hisoblagan holda boʻlib-boʻlib toʻlashga beriladi: <br>
+                            - Toshkent shahri, Nukus shahri va viloyat markazlarida – 3 yil davomida kamida 35 foiz miqdorida dastlabgi toʻlovni oʻn besh ish kunida amalga oshirish sharti bilan; <br>
+                            - boshqa aholi punktlarida – 5 yil davomida 15 foiz miqdorida dastlabki toʻlovni oʻn besh ish kunida amalga oshirish sharti bilan;
+                            - 4- va 5-toifalardagi tumanlarda esa 10 yil davomida kamida 15 foiz miqdorida dastlabki toʻlovni oʻn besh ish kunida amalga oshirish sharti bilan; <br>
+                            - barcha turdagi yer uchastkalarining qiymati oʻn besh ish kunida toʻliq toʻlangan taqdirda, jami summaga nisbatan 20 foiz chegirma berilishi, bunda boshlangʻich narxi 50 foizdan ortiqqa pasaytirilgan holda realizatsiya qilingan yer uchastkalari mustasno.
+                    </div>
+                </div>
+                <div class="lot-faqs">
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <button class="accordion-button">Lot information <i class="fas fa-chevron-down"></i></button>
+                            <div class="accordion-content">
+                                <p>Details about the lot...</p>
                             </div>
                         </div>
-                        <div class="bg">
-                            <div class="extra-lot-item">
-                                <div class="exta-card__title">For participation</div>
-                                <div class="border"></div>
-                                <p>Please login to apply</p>
-                                <a href="authorization.html"><button type="button">Apply</button></a>
-                                <div class="apply-link">
-                                    <a href="authorization.html">How to apply to participate in the auction?</a>
-                                </div>
+                        <div class="accordion-item">
+                            <button class="accordion-button">Property information <i class="fas fa-chevron-down"></i></button>
+                            <div class="accordion-content">
+                                <p>{{product.description}}</p>
                             </div>
                         </div>
-                        <div class="bg">
-                            <div class="extra-lot-item">
-                                <div class="exta-card__title">Location on the map</div>
-                                <div class="border"></div>
-                                <div class="location">
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d928.635918072573!2d69.2976711790919!3d41.3239500410949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38aef4cf9f83c98d%3A0x4d38c0499af68506!2sMash&#39;al!5e0!3m2!1sen!2s!4v1741715371786!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                </div>
+                        <div class="accordion-item">
+                            <button class="accordion-button">Customer information <i class="fas fa-chevron-down"></i></button>
+                            <div class="accordion-content">
+                                <p>Details about the customer...</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <button class="accordion-button">Lot documents <i class="fas fa-chevron-down"></i></button>
+                            <div class="accordion-content">
+                                <p>Documents related to the lot...</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+            <div class="extra-lot__detail">
+                <div class="extra-lot__details">
+                    <div class="bg">
+                        <div class="extra-lot-item">
+                            <div class="exta-card__title">Application deadline</div>
+                            <div class="border"></div>
+                            <div class="countdown-wrapper">
+                                <div class="countdown-item">
+                                    <span id="days" class="countdown-number">00</span>
+                                    <span class="countdown-label">DAYS</span>
+                                </div>
+                                <div class="countdown-item">
+                                    <span id="hours" class="countdown-number">00</span>
+                                    <span class="countdown-label">HOUR</span>
+                                </div>
+                                <div class="countdown-item">
+                                    <span id="minutes" class="countdown-number">00</span>
+                                    <span class="countdown-label">MINUTES</span>
+                                </div>
+                                <div class="countdown-item">
+                                    <span id="seconds" class="countdown-number">00</span>
+                                    <span class="countdown-label">SECONDS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg">
+                        <div class="extra-lot-item">
+                            <div class="exta-card__title">For participation</div>
+                            <div class="border"></div>
+                            <p>Please login to apply</p>
+                            <a href="authorization.html"><button type="button">Apply</button></a>
+                            <div class="apply-link">
+                                <a href="authorization.html">How to apply to participate in the auction?</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg">
+                        <div class="extra-lot-item">
+                            <div class="exta-card__title">Location on the map</div>
+                            <div class="border"></div>
+                            <div class="location">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d928.635918072573!2d69.2976711790919!3d41.3239500410949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38aef4cf9f83c98d%3A0x4d38c0499af68506!2sMash&#39;al!5e0!3m2!1sen!2s!4v1741715371786!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- /Lot section -->
 
     {% if user.is_authenticated %}
     <div class="row">
         <div class="col-md-4 mb-3">
-            <p>Time left: <span id="timer"></span></p>
-            <h5>{{product.description}}</h5>
             <div id="price-adding">
                 <input type="number" id="price-input" placeholder="Enter price" />
                 <button id="add-price-btn">Add Price</button>
@@ -273,37 +271,28 @@
 
     <script>
         const endTime = "{{ product.end_time|date:'c' }}"; // ISO 8601 format
-        function startCountdown(endTime) {
-            const timerElement = document.getElementById('timer');
-            const endDate = new Date(endTime).getTime();
-    
-            function updateTimer() {
+        function startCountdown(endDate) {
+            function updateCountdown() {
                 const now = new Date().getTime();
                 const timeLeft = endDate - now;
-    
-                if (timeLeft <= 0) {
-                    timerElement.innerHTML = "Time's up!";
-                    clearInterval(intervalId);
-    
-                    // Disable price adding
-                    const price_adding = document.getElementById('price-adding')
-                    if (price_adding) {
-                        price_adding.remove()
-                    }
-    
-                    return;
+
+                if (timeLeft > 0) {
+                    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                    document.getElementById("days").textContent = String(days).padStart(2, '0');
+                    document.getElementById("hours").textContent = String(hours).padStart(2, '0');
+                    document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
+                    document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
+                } else {
+                    document.querySelector(".countdown-wrapper").innerHTML = "<p style='color: red; font-size: 20px;'>EXPIRED</p>";
                 }
-    
-                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-    
-                timerElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
             }
-    
-            const intervalId = setInterval(updateTimer, 1000);
-            updateTimer(); // Call once immediately
+
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
         }
         startCountdown(endTime);
     
