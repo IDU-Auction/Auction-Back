@@ -5,6 +5,7 @@
     color: #1976d2;
     line-height: 1.3125rem;
     align-items: center;
+    margin-bottom: 1rem;
 }
 
 .breadcrumbs a {
@@ -23,14 +24,21 @@
 
 /* Lot Detail styles */
 
+.lot {
+    display: flex;
+}
+
 .lot-detail {
-    width: 75%;
+    width: 67%;
     height: auto;
+}
+
+.main-lot-details {
+    display: flex;
     padding: 20px 0 20px 20px;
     border: 1px solid rgba(3, 58, 141, 0.2);
     border-radius: 5px;
     box-sizing: border-box;
-    display: flex;
 }
 
 .lot-card__image {
@@ -142,6 +150,22 @@
     line-height: 1.6825rem;
 }
 
+.animation-up {
+    background: rgb(32, 191, 0);
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    animation-name: zoomIN;
+    animation-duration: 2s;
+
+}
+
 .lot-card-statistics {
     margin-top: 1.25rem;
 
@@ -161,30 +185,210 @@
     padding: 0 0.9375rem 0 0.3125rem;
 }
 
+.lot-important__info {
+    margin-top: 2.5rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #023581;
+    font-weight: 300;
+}
+
+.reminder {
+    margin-bottom: 1.25rem;
+    border: 1px solid rgb(211, 47, 47);
+    border-radius: 0.25rem;
+    padding: 1rem;
+    animation: 1s linear 0s infinite alternate none running redColor;
+}
+
+.red-text {
+    color: #d32f2f;
+    font-weight: 700;
+
+}
+
+.important-information {
+    margin-bottom: 1.25rem;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    border: 1px solid rgb(33, 150, 243);
+}
+
+@keyframes redColor {
+    0% {
+        box-shadow: rgb(252, 230, 234) 0px 0px 10px -2px;
+        border-color: rgb(252, 230, 234);
+    }
+
+    33% {
+        box-shadow: rgb(255, 184, 186) 0px 0px 10px -2px;
+        border-color: rgb(255, 184, 186);
+    }
+ 
+    66% {
+        box-shadow: rgb(224, 72, 72) 0px 0px 10px -2px;
+        border-color: rgb(224, 72, 72);
+    }
+
+    100% {
+        box-shadow: rgb(229, 8, 8) 0px 0px 10px -2px;
+        border-color: rgb(229, 8, 8);
+    }
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.accordion {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.accordion-item {
+    background: #EAF3FF;
+    border-bottom: 1px solid #ddd;
+}
+.accordion-item button {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 15px;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #023581;
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+}
+.accordion-item button i {
+    color: #757575;
+    transition: transform 0.3s ease;
+}
+.accordion-item button.active i {
+    transform: rotate(180deg);
+}
+.accordion-content {
+    display: none;
+    padding: 15px;
+    background: white;
+}
 
 /* Extra Lot Detail styles */
 
 .extra-lot__detail {
-    width: 25%;
+    width: 33%;
     height: auto;
     box-sizing: border-box;
+    padding-left: 30px;
+}
+
+.bg {
+    background-color: #EBF3FF;
+    margin-bottom: 60px;
+}
+
+.extra-lot-item {
+    margin: 30px 20px 0 30px;
+    position: relative;
+    background-color: #ffffff;
+    padding: 15px 15px 15px 25px;
+    top: -30px;
+    border: 1px solid rgba(3, 58, 141, 0.2);
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+
+}
+
+.exta-card__title {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.1875rem;
+    color: #023581;
+    letter-spacing: 0.5px;
+}
+
+.border {
+    height: 4px;
+    width: 100px;
+    margin-top: 2px;
+    background-color: #E9AC1C;
+}
+
+.countdown-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; 
+    margin-top: 0.5rem;
+}
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.countdown-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #023581;
+    text-shadow: 0px 8px 6px rgba(4, 0, 67, 0.36);
+}
+.countdown-label {
+    font-size: 0.5rem;
+    font-weight: 700;
+    color: #023581;
+    margin-top: 5px;
+}
+
+.extra-lot__details .bg:nth-of-type(2) .extra-lot-item{
+    background-image: url(/images/lot-detail-images/contract.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+
+
+.extra-lot-item p {
+    color: #023581;
+    font-size: 0.875rem;
+    line-height: 1.3125rem;
+    font-weight: 300;
+    margin-top: 0;
+}
+
+.extra-lot-item button {
+    margin-top: 0.25rem;
+    color: #ffffff;
+    background-color: #023581;
+    padding-left: 40px;
+    padding-right: 40px;
+    line-height: 36px;
+    border: 1px solid #023581;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.apply-link {
+    margin-top: 1rem;
+
+}
+
+.apply-link a {
+    color: #2196f3;
+    font-size: 0.875rem;
+    line-height: 1.3125rem;
+}
+
+.location {
+    position: relative;
+    height: 300px;
+    padding-top: 1rem;
+}
+
+.location iframe {
+    width: 100%;
+    height: 100%;
 }
