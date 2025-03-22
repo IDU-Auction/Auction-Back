@@ -12,13 +12,12 @@ A comprehensive e-auction website built with Django backend and React frontend.
 ## Tech Stack
 - Django
 - Django REST Framework
-- React
 - PostgreSQL
 
 ## Setup Instructions
 1. Clone the repo
-2. Install dependencies (`pip install -r requirements.txt` for backend, `npm install` for frontend)
-3. Run Django and React servers.
+2. Install dependencies (`pip install -r requirements.txt` for backend)
+3. Run Django server.
 
 ## Testing
 Describe your testing strategy and how to run tests.
