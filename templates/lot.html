@@ -140,9 +140,96 @@
                             </div>
                         </div>
                     </div>
+                    <div class="lot-important__info">
+                        <div class="reminder reminder-animation">
+                            <span class="red-text">Reminder:</span><br>
+                            According to the resolution of the president of the Republic of Uzbekistan PQ-162 of 19.04.2024, in the process of electronic online auction trading held on this lot, participants are required to have a current (12.5) percentage deposit <span class="red-text">amount in their personal account</span> with respect to the price offer <span class="red-text">from the third step</span>. In this case, these funds are taken into account as deposit.
+                        </div>
+                        <div class="important-information">
+                            <span style="font-weight: bold;">Important information:</span><br>
+                                O‘zbekiston Respublikasi Prezidentining 06.09.2024-yildagi PF-135-son Farmoniga asosan qishloq xoʻjaligiga moʻljallanmagan yer uchastkalarini mulk huquqi yoki ijara huquqi asosida, qishloq xoʻjaligiga moʻljallangan yer uchastkalarini ijara huquqi asosida sotib olish qiymatini quyidagi shartlarda har oyda teng ulushlarda, qoldiq summaga Markaziy bankning asosiy stavkasida foiz hisoblagan holda boʻlib-boʻlib toʻlashga beriladi: <br>
+                                - Toshkent shahri, Nukus shahri va viloyat markazlarida – 3 yil davomida kamida 35 foiz miqdorida dastlabgi toʻlovni oʻn besh ish kunida amalga oshirish sharti bilan; <br>
+                                - boshqa aholi punktlarida – 5 yil davomida 15 foiz miqdorida dastlabki toʻlovni oʻn besh ish kunida amalga oshirish sharti bilan;
+                                - 4- va 5-toifalardagi tumanlarda esa 10 yil davomida kamida 15 foiz miqdorida dastlabki toʻlovni oʻn besh ish kunida amalga oshirish sharti bilan; <br>
+                                - barcha turdagi yer uchastkalarining qiymati oʻn besh ish kunida toʻliq toʻlangan taqdirda, jami summaga nisbatan 20 foiz chegirma berilishi, bunda boshlangʻich narxi 50 foizdan ortiqqa pasaytirilgan holda realizatsiya qilingan yer uchastkalari mustasno.
+                        </div>
+                    </div>
+                    <div class="lot-faqs">
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <button class="accordion-button">Lot information <i class="fas fa-chevron-down"></i></button>
+                                <div class="accordion-content">
+                                    <p>Details about the lot...</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <button class="accordion-button">Property information <i class="fas fa-chevron-down"></i></button>
+                                <div class="accordion-content">
+                                    <p>Details about the property...</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <button class="accordion-button">Customer information <i class="fas fa-chevron-down"></i></button>
+                                <div class="accordion-content">
+                                    <p>Details about the customer...</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <button class="accordion-button">Lot documents <i class="fas fa-chevron-down"></i></button>
+                                <div class="accordion-content">
+                                    <p>Documents related to the lot...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="extra-lot__detail">
-
+                    <div class="extra-lot__details">
+                        <div class="bg">
+                            <div class="extra-lot-item">
+                                <div class="exta-card__title">Application deadline</div>
+                                <div class="border"></div>
+                                <div class="countdown-wrapper">
+                                    <div class="countdown-item">
+                                        <span id="days" class="countdown-number">00</span>
+                                        <span class="countdown-label">DAYS</span>
+                                    </div>
+                                    <div class="countdown-item">
+                                        <span id="hours" class="countdown-number">00</span>
+                                        <span class="countdown-label">HOUR</span>
+                                    </div>
+                                    <div class="countdown-item">
+                                        <span id="minutes" class="countdown-number">00</span>
+                                        <span class="countdown-label">MINUTES</span>
+                                    </div>
+                                    <div class="countdown-item">
+                                        <span id="seconds" class="countdown-number">00</span>
+                                        <span class="countdown-label">SECONDS</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg">
+                            <div class="extra-lot-item">
+                                <div class="exta-card__title">For participation</div>
+                                <div class="border"></div>
+                                <p>Please login to apply</p>
+                                <a href="authorization.html"><button type="button">Apply</button></a>
+                                <div class="apply-link">
+                                    <a href="authorization.html">How to apply to participate in the auction?</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg">
+                            <div class="extra-lot-item">
+                                <div class="exta-card__title">Location on the map</div>
+                                <div class="border"></div>
+                                <div class="location">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d928.635918072573!2d69.2976711790919!3d41.3239500410949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38aef4cf9f83c98d%3A0x4d38c0499af68506!2sMash&#39;al!5e0!3m2!1sen!2s!4v1741715371786!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -151,8 +238,6 @@
     {% if user.is_authenticated %}
     <div class="row">
         <div class="col-md-4 mb-3">
-            <h4>{{product.name}}</h4>
-            <h5>{{product.initial_price}} so'm</h5>
             <p>Time left: <span id="timer"></span></p>
             <h5>{{product.description}}</h5>
             <div id="price-adding">
