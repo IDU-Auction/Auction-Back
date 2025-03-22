@@ -173,7 +173,7 @@
                         <tbody>
                             {% for item in product.prices %}
                             <tr>
-                                <td>{{item.user.username}}</td>
+                                <td>{{item.user.phone_number}}</td>
                                 <td>{{item.price}}</td>
                             </tr>
                             {% endfor %}
@@ -234,7 +234,7 @@
             // Populate table with updated price list
             prices.forEach(price => {
                 const newRow = document.createElement('tr');
-                newRow.innerHTML = `<td>${price.user__full_name}</td><td>${price.price}</td>`;
+                newRow.innerHTML = `<td>${price.user__label}</td><td>${price.price}</td>`;
                 tableBody.appendChild(newRow);
             });
         };

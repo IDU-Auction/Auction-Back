@@ -29,6 +29,9 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     # REQUIRED_FIELDS = ['full_name']
     objects = CustomUserManager()
 
-    def __str__(self):
+    @property
+    def label(self):
         return self.full_name if self.full_name else self.phone_number
-    
+
+    def __str__(self):
+        return self.label
