@@ -425,3 +425,65 @@
     opacity: 0.9;
 }
 
+@media only screen and (max-width: 1200px) {
+    .lower-navigation__items{
+        justify-content: flex-end;
+        padding: 0 2.5rem;
+        margin:  0.875rem 0;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .lots{
+        flex-direction: column;
+        margin: 1rem;
+    }
+    .left-lots-sidebar {
+        width: 100%;
+        height: auto;
+    }
+    .lots-content {
+        width: 100%;
+        height: auto;
+        padding: 0;
+        margin-left: 0;
+        margin-top: 2.5rem;
+    }
+
+    .lots-list__item {
+        border: 1px solid #E9ECF2;
+        border-radius: 0.25rem;
+    }
+}
+
+@media only screen and (max-width: 710px) {
+    .search-filter__tools {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .extra-lot__aspect {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .lot-buttons {
+        padding-left: 1rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .lot-aspect {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .main-lot__items {
+        flex-direction: column;
+    }
+    .lot-image {
+        width: auto;
+    }
+    .lot-info {
+        width: auto;
+    }
+}

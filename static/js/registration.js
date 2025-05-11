@@ -15,7 +15,7 @@ function updateDateTime() {
 setInterval(updateDateTime, 1000);
 updateDateTime();
 
-// Phone Error Message
+
 $(document).ready(function () {
     $("#phone").on("input", function () {
         let phoneInput = $(this).val();

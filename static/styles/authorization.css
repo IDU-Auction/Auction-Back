@@ -185,3 +185,36 @@
     background-color: #023581;
     color: #fff;
 }
+
+
+
+@media only screen and (max-width: 1200px) {
+    .navigation-items-wrapper {
+        padding-right: 3.125rem;
+    }
+    .hide-word {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 810px) {
+    .authorization {
+        width: 95%;
+    }
+    .date-time {
+        padding-left: 0;
+    }
+    .left-nav__items {
+        flex-direction: column;
+        align-items: start;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .date-time {
+        flex-wrap: wrap;
+    }
+    .authorization-box {
+        padding: 1.25rem 2.1875rem  1.25rem  1.25rem;
+    }
+}
